@@ -1,0 +1,7 @@
+<h2>Travel!</h2>
+
+<ol>
+<% @destinations.each do |d|%>
+<li><%=link_to "#{d.name}, #{d.country}", destination_path(d)%>
+<% end %></li>
+</ol>

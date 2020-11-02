@@ -1,0 +1,7 @@
+<h2>POSTS</h2> <%=link_to "Create New Post!", new_post_path%>
+<ul>
+<% @posts.each do |post|%>
+</li><%=link_to post.title, post_path(post)%> by: <%=post.blogger.name%>
+<br/>
+<% end %>
+</ul>

@@ -1,0 +1,11 @@
+<h2><%=@post.title%></h2>
+<h3>By <%=link_to @post.blogger.name, blogger_path(@post.blogger)%></h3>
+
+<%=button_to "Like", "/posts/#{@post.id}/like", method: :patch%>
+<p>Likes: <%= @post.likes%></p>
+<p><%=link_to @post.destination.name, destination_path(@post.destination)%>
+<p><%= @post.content%> </p>
+
+<%=link_to "Edit this post", edit_post_path%> ||
+<%=link_to "All Posts", posts_path%> <br/><br/>
+<%=button_to "Delete Post", post_path(@post), method: :delete%>

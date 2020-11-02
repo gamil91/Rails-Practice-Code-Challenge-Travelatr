@@ -1,0 +1,13 @@
+<h2>Welcome, <%=@blogger.name%>!</h2>
+
+<p>Total Likes : <%= @blogger.posts.map(&:likes).sum%></p>
+
+<% top_post = @blogger.posts.max_by(&:likes)%>
+<%=link_to"Featured Post", post_path(top_post)%>
+
+<ul>
+<% @blogger.destinations.each do |d|%>
+<li><%=link_to "#{d.name}, #{d.country}", destination_path(d)%></li>
+
+<%end%>
+</ul>

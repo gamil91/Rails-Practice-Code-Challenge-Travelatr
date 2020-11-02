@@ -1,0 +1,15 @@
+<h1><%=@destination.name%>, <%=@destination.country%></h1>
+
+<% top_destination = @destination.posts.max_by(&:likes) %>
+<%=link_to "Featured Post", post_path(top_destination)%><br/>
+
+<% order = @destination.posts.order("created_at desc").limit(5)%><br/>
+<% order.each do |post|%>
+<%= post.title%><br/>
+<%= post.content%></br>
+<%= post.likes%><br/>
+<%= post.created_at%><br/>
+<% end %><br/>
+
+<% ages = @destination.bloggers.map(&:age)%>
+Average age = <%= ages.sum/ages.length%>
