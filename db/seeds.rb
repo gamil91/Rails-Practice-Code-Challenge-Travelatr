@@ -9,7 +9,7 @@
 
 30.times do 
   Destination.create({
-    name: Faker::GameOfThrones.city,
+    name: Faker::Address.city,
     country: Faker::Address.country
   })
 end
